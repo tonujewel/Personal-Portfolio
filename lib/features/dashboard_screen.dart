@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:gap/gap.dart';
+import 'package:personal_portfolio/core/color_manager.dart';
 
 class DashboardScreen extends StatelessWidget {
   const DashboardScreen({super.key});
@@ -6,13 +8,10 @@ class DashboardScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(
-        title: Text('Cristino'),
-        centerTitle: false,
-        elevation: 0,
-      ),
       body: ListView(
-        children: [HeaderSection()],
+        children: [
+          HeaderSection(),
+        ],
       ),
     );
   }
@@ -24,12 +23,59 @@ class HeaderSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      padding: EdgeInsets.symmetric(vertical: 50, horizontal: 20),
-      decoration: BoxDecoration(
-        color: Colors.grey[200],
-      ),
+      color: ColorManager.primaryColor,
+      padding: EdgeInsets.symmetric(horizontal: 110, vertical: 16),
       child: Column(
         children: [
+          Row(
+            crossAxisAlignment: CrossAxisAlignment.center,
+            children: [
+              Image.asset(
+                'assets/images/logo.png',
+                height: 40,
+              ),
+              Gap(16),
+              Text(
+                "Jewel Rana",
+                style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 18),
+              ),
+              Gap(60),
+              Expanded(
+                child: Row(
+                  mainAxisAlignment: MainAxisAlignment.spaceAround,
+                  children: [
+                    Text(
+                      "About",
+                      style: TextStyle(color: Colors.white, fontSize: 16),
+                    ),
+                    Text(
+                      "Services",
+                      style: TextStyle(color: Colors.white, fontSize: 16),
+                    ),
+                    Text(
+                      "Services",
+                      style: TextStyle(color: Colors.white, fontSize: 16),
+                    ),
+                    Text(
+                      "Blog",
+                      style: TextStyle(color: Colors.white, fontSize: 16),
+                    ),
+                  ],
+                ),
+              ),
+              Container(
+                padding: EdgeInsets.symmetric(horizontal: 20, vertical: 8),
+                decoration: BoxDecoration(
+                  border: Border.all(color: Colors.white.withAlpha(30)),
+                  borderRadius: BorderRadius.circular(8),
+                ),
+                child: Text(
+                  "CONTACT",
+                  style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 10),
+                ),
+              )
+            ],
+          ),
           Text(
             'Welcome to Cristino',
             style: TextStyle(fontSize: 24, fontWeight: FontWeight.bold),

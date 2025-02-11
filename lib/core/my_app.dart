@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:personal_portfolio/core/custom_theme.dart';
 import 'package:personal_portfolio/features/dashboard_screen.dart';
 
 class MyApp extends StatelessWidget {
@@ -7,10 +8,7 @@ class MyApp extends StatelessWidget {
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'Flutter Demo',
-      theme: ThemeData(
-        colorScheme: ColorScheme.fromSeed(seedColor: Colors.deepPurple),
-        useMaterial3: true,
-      ),
+      theme: CustomTheme.lightTheme,
       debugShowCheckedModeBanner: false,
       home: const DashboardScreen(),
     );
