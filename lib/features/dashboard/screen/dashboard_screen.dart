@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:personal_portfolio/features/my_project/screen/my_projects_screen.dart';
 
 import '../../../core/utils/color_manager.dart';
 import '../../../core/utils/size_manager.dart';
@@ -20,11 +21,19 @@ class DashboardScreen extends StatelessWidget {
           HeaderSection(),
           Expanded(
             child: ListView(
+              shrinkWrap: true,
               children: [
                 AboutMeScreen(),
                 MyServicesScreen(),
                 MyExperienceScreen(),
                 MySkills(),
+                MyProjectsScreen(),
+                Center(
+                  child: Text(
+                    "END",
+                    style: TextStyle(color: Colors.white),
+                  ),
+                ),
               ],
             ),
           ),
@@ -44,7 +53,7 @@ class BigTitleText extends StatelessWidget {
   Widget build(BuildContext context) {
     return Row(
       crossAxisAlignment: CrossAxisAlignment.start,
-      mainAxisAlignment: MainAxisAlignment.center,
+      mainAxisAlignment: MainAxisAlignment.start,
       children: [
         Text(
           title1,
