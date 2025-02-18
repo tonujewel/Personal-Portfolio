@@ -3,6 +3,7 @@ import 'package:gap/gap.dart';
 
 import '../../../core/utils/color_manager.dart';
 import '../../../core/utils/size_manager.dart';
+import '../../../core/widgets/primary_button.dart';
 
 class AboutMeScreen extends StatelessWidget {
   const AboutMeScreen({super.key});
@@ -59,21 +60,7 @@ class AboutMeScreen extends StatelessWidget {
                       ),
                     ),
                     Gap(30),
-                    Container(
-                      padding: EdgeInsets.symmetric(horizontal: 16, vertical: 12),
-                      decoration: BoxDecoration(
-                        borderRadius: BorderRadius.circular(6),
-                        color: Color.fromRGBO(239, 109, 88, 1),
-                      ),
-                      child: Text(
-                        'See My Work'.toUpperCase(),
-                        textAlign: TextAlign.center,
-                        style: TextStyle(
-                          color: Colors.white,
-                          fontWeight: FontWeight.bold,
-                        ),
-                      ),
-                    ),
+                    PrimaryButton(onPressed: () {  }, text: 'See My Work'.toUpperCase(),),
                     Gap(40),
                   ],
                 ),
@@ -92,3 +79,4 @@ class AboutMeScreen extends StatelessWidget {
     );
   }
 }
+

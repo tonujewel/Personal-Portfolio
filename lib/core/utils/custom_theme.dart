@@ -45,5 +45,10 @@ class CustomTheme {
     highlightColor: darkSwatch,
     colorScheme: ColorScheme.fromSwatch(primarySwatch: primarySwatch).copyWith(surface: Colors.white),
     bottomAppBarTheme: const BottomAppBarTheme(color: Colors.white),
+    inputDecorationTheme: InputDecorationTheme(
+      border: OutlineInputBorder(
+        borderSide: BorderSide(color: Colors.black, width: 1.5),
+      ),
+    ),
   );
 }

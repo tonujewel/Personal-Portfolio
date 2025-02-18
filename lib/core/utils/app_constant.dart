@@ -1,5 +1,6 @@
 import 'package:personal_portfolio/core/models/my_skills_model.dart';
 import 'package:personal_portfolio/core/models/work_experience_model.dart';
+import 'package:personal_portfolio/features/footer/model/social_data_model.dart';
 
 import '../models/my_services_model.dart';
 
@@ -30,7 +31,7 @@ class AppConstant {
       ],
     ),
     MyServicesModel(
-      title: 'API Integration & Backend Connectivity',
+      title: 'API Integration',
       img: 'assets/images/my_services/api_integration.png',
       desc: [
         'RESTful API and third-party service integration',
@@ -98,7 +99,7 @@ class AppConstant {
     ),
   ];
 
- static final List<MySkillsModel> mySkillsList = [
+  static final List<MySkillsModel> mySkillsList = [
     MySkillsModel(
       id: '1',
       title: 'Flutter',
@@ -191,4 +192,36 @@ class AppConstant {
     ),
   ];
 
+  static final List<SocialDataModel> socialIcons = [
+    SocialDataModel(
+      title: 'Facebook',
+      icon: 'assets/svg/facebook.svg',
+      url: 'https://www.facebook.com/tonujewel',
+    ),
+    SocialDataModel(
+      title: 'Twitter',
+      icon: 'assets/svg/twitter.svg',
+      url: 'https://twitter.com/',
+    ),
+    SocialDataModel(
+      title: 'LinkedIn',
+      icon: 'assets/svg/linkedin.svg',
+      url: 'https://www.linkedin.com/in/tonujewel',
+    ),
+    SocialDataModel(
+      title: 'GitHub',
+      icon: 'assets/svg/github.svg',
+      url: '',
+    ),
+    SocialDataModel(
+      title: 'Instagram',
+      icon: 'assets/svg/instagram.svg',
+      url: 'https://www.instagram.com/tonujewel',
+    ),
+    SocialDataModel(
+      title: 'WhatsApp',
+      icon: 'assets/svg/whatsapp.svg',
+      url: 'https://wa.me/',
+    ),
+  ];
 }

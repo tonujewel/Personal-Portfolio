@@ -7,7 +7,7 @@ class MyApp extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'Flutter Demo',
+      title: 'Jewel Rana',
       theme: CustomTheme.lightTheme,
       debugShowCheckedModeBanner: false,
       home: const DashboardScreen(),

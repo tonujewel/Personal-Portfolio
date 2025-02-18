@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:personal_portfolio/features/my_project/screen/my_projects_screen.dart';
+import 'package:personal_portfolio/features/footer/screen/footer_screen.dart';
 
 import '../../../core/utils/color_manager.dart';
 import '../../../core/utils/size_manager.dart';
 import '../../about_me/screen/about_me_screen.dart';
+import '../../contact/screen/contact_screen.dart';
 import '../../my_experience/screen/my_experience_screen.dart';
+import '../../my_project/screen/my_projects_screen.dart';
 import '../../my_service/screen/my_service_screen.dart';
 import '../../my_skills/screen/my_skills_screens.dart';
 
@@ -28,12 +30,8 @@ class DashboardScreen extends StatelessWidget {
                 MyExperienceScreen(),
                 MySkills(),
                 MyProjectsScreen(),
-                Center(
-                  child: Text(
-                    "END",
-                    style: TextStyle(color: Colors.white),
-                  ),
-                ),
+                ContactScreen(),
+                FooterScreen(),
               ],
             ),
           ),
@@ -59,6 +57,7 @@ class BigTitleText extends StatelessWidget {
           title1,
           style: TextStyle(fontSize: 48, fontWeight: FontWeight.bold),
         ),
+        Gap(10),
         Text(
           title2,
           style: TextStyle(
