@@ -199,11 +199,6 @@ class AppConstant {
       url: 'https://www.facebook.com/tonujewel',
     ),
     SocialDataModel(
-      title: 'Twitter',
-      icon: 'assets/svg/twitter.svg',
-      url: 'https://twitter.com/',
-    ),
-    SocialDataModel(
       title: 'LinkedIn',
       icon: 'assets/svg/linkedin.svg',
       url: 'https://www.linkedin.com/in/tonujewel',
@@ -211,17 +206,15 @@ class AppConstant {
     SocialDataModel(
       title: 'GitHub',
       icon: 'assets/svg/github.svg',
-      url: '',
-    ),
-    SocialDataModel(
-      title: 'Instagram',
-      icon: 'assets/svg/instagram.svg',
-      url: 'https://www.instagram.com/tonujewel',
+      url: 'https://github.com/tonujewel/',
     ),
     SocialDataModel(
       title: 'WhatsApp',
       icon: 'assets/svg/whatsapp.svg',
-      url: 'https://wa.me/',
+      url: 'https://wa.me/8801744960015',
     ),
   ];
+
+  static final String desc =
+      'Skilled Developer with 6 years of experience developing mobile applications and 4 years of experience in the Flutter framework and 2 years of native app development experience. Skilled in collaborating with cross-functional teams to deliver high-quality, scalable solutions. Proficient in Agile development methodologies. Seeking to leverage my expertise in software development and my passion for innovation to drive business growth and success.';
 }

@@ -1,11 +1,11 @@
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
-import 'package:personal_portfolio/features/footer/screen/footer_screen.dart';
 
 import '../../../core/utils/color_manager.dart';
 import '../../../core/utils/size_manager.dart';
 import '../../about_me/screen/about_me_screen.dart';
 import '../../contact/screen/contact_screen.dart';
+import '../../footer/screen/footer_screen.dart';
 import '../../my_experience/screen/my_experience_screen.dart';
 import '../../my_project/screen/my_projects_screen.dart';
 import '../../my_service/screen/my_service_screen.dart';
@@ -17,10 +17,12 @@ class DashboardScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      backgroundColor: ColorManager.primaryColor,
+      backgroundColor: Colors.white,
       body: Column(
         children: [
+          Gap(20),
           HeaderSection(),
+          Gap(20),
           Expanded(
             child: ListView(
               shrinkWrap: true,
@@ -32,6 +34,7 @@ class DashboardScreen extends StatelessWidget {
                 MyProjectsScreen(),
                 ContactScreen(),
                 FooterScreen(),
+                Gap(40)
               ],
             ),
           ),
@@ -77,44 +80,21 @@ class HeaderSection extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Container(
-      color: ColorManager.primaryColor,
-      padding: EdgeInsets.symmetric(horizontal: SizeManager.webHorizontalPadding, vertical: 16),
+      decoration: BoxDecoration(
+        color: ColorManager.dartColor,
+        borderRadius: BorderRadius.circular(40),
+      ),
+      margin: EdgeInsets.symmetric(horizontal: SizeManager.webHorizontalPadding),
+      padding: EdgeInsets.all(10),
       child: Row(
-        crossAxisAlignment: CrossAxisAlignment.center,
+        mainAxisAlignment: MainAxisAlignment.spaceBetween,
         children: [
-          Image.asset(
-            'assets/images/logo.png',
-            height: 40,
-          ),
-          Gap(16),
-          Text(
-            "Jewel Rana",
-            style: TextStyle(fontWeight: FontWeight.bold, color: Colors.white, fontSize: 18),
-          ),
-          Gap(40),
-          Expanded(
-            child: Row(
-              mainAxisAlignment: MainAxisAlignment.spaceAround,
-              children: [
-                TopBarItem(text: 'About Me'),
-                TopBarItem(text: 'Services'),
-                TopBarItem(text: 'Projects'),
-                TopBarItem(text: 'Testimonials'),
-                TopBarItem(text: 'Contacts'),
-              ],
-            ),
-          ),
-          Container(
-            padding: EdgeInsets.symmetric(horizontal: 20, vertical: 8),
-            decoration: BoxDecoration(
-              border: Border.all(color: ColorManager.secondaryColor),
-              borderRadius: BorderRadius.circular(8),
-            ),
-            child: Text(
-              "Download CV",
-              style: TextStyle(color: Colors.white, fontWeight: FontWeight.bold, fontSize: 10),
-            ),
-          )
+          TopBarItem(text: 'Home', isSelected: true),
+          TopBarItem(text: 'About', isSelected: false),
+          TopBarItem(text: 'Services', isSelected: false),
+          TopBarItem(text: 'Projects', isSelected: false),
+          TopBarItem(text: 'Testimonials', isSelected: false),
+          TopBarItem(text: 'Contacts', isSelected: false),
         ],
       ),
     );
@@ -125,15 +105,24 @@ class TopBarItem extends StatelessWidget {
   const TopBarItem({
     super.key,
     required this.text,
+    required this.isSelected,
   });
 
   final String text;
+  final bool isSelected;
 
   @override
   Widget build(BuildContext context) {
-    return Text(
-      text,
-      style: TextStyle(color: Colors.white),
+    return Container(
+      padding: EdgeInsets.symmetric(horizontal: 32, vertical: 14),
+      decoration: BoxDecoration(
+        color: isSelected ? ColorManager.secondaryColor : Colors.transparent,
+        borderRadius: BorderRadius.circular(30),
+      ),
+      child: Text(
+        text,
+        style: TextStyle(color: Colors.white, fontFamily: 'Lufga'),
+      ),
     );
   }
 }
