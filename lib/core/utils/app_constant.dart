@@ -1,6 +1,7 @@
 import 'package:personal_portfolio/core/models/my_skills_model.dart';
 import 'package:personal_portfolio/core/models/work_experience_model.dart';
 import 'package:personal_portfolio/features/footer/model/social_data_model.dart';
+import 'package:personal_portfolio/features/my_project/models/my_project_model.dart';
 
 import '../models/my_services_model.dart';
 
@@ -215,6 +216,56 @@ class AppConstant {
     ),
   ];
 
+  static final List<MyProjectModel> myProjectsList = [
+    MyProjectModel(
+      name: 'VPM Cloud',
+      description:
+          'A Flutter e-commerce app with Firebase authentication, Firestore database, and Stripe payment gateway integration.',
+      image: 'assets/images/projects/vpm_cloud.png',
+      playStoreUrl: 'https://play.google.com/store/apps/details?id=com.exotico.ecommerce',
+      appStoreUrl: 'https://apps.apple.com/us/app/exotico-ecommerce/id1586286823',
+    ),
+    MyProjectModel(
+      name: 'The Grow',
+      description:
+          'A Flutter food delivery app with Firebase authentication, Firestore database, and Google Maps integration.',
+      image: 'assets/images/projects/the_grow.png',
+      playStoreUrl: 'https://play.google.com/store/apps/details?id=com.exotico.food_delivery',
+      appStoreUrl: 'https://apps.apple.com/us/app/exotico-food-delivery/id1586286824',
+    ),
+    MyProjectModel(
+      name: 'VPM Cloud',
+      description:
+          'A Flutter e-commerce app with Firebase authentication, Firestore database, and Stripe payment gateway integration.',
+      image: 'assets/images/projects/vpm_cloud.png',
+      playStoreUrl: 'https://play.google.com/store/apps/details?id=com.exotico.ecommerce',
+      appStoreUrl: 'https://apps.apple.com/us/app/exotico-ecommerce/id1586286823',
+    ),
+    MyProjectModel(
+      name: 'The Grow',
+      description:
+          'A Flutter food delivery app with Firebase authentication, Firestore database, and Google Maps integration.',
+      image: 'assets/images/projects/the_grow.png',
+      playStoreUrl: 'https://play.google.com/store/apps/details?id=com.exotico.food_delivery',
+      appStoreUrl: 'https://apps.apple.com/us/app/exotico-food-delivery/id1586286824',
+    ),
+    MyProjectModel(
+      name: 'VPM Cloud',
+      description:
+          'A Flutter e-commerce app with Firebase authentication, Firestore database, and Stripe payment gateway integration.',
+      image: 'assets/images/projects/vpm_cloud.png',
+      playStoreUrl: 'https://play.google.com/store/apps/details?id=com.exotico.ecommerce',
+      appStoreUrl: 'https://apps.apple.com/us/app/exotico-ecommerce/id1586286823',
+    ),
+    MyProjectModel(
+      name: 'The Grow',
+      description:
+          'A Flutter food delivery app with Firebase authentication, Firestore database, and Google Maps integration.',
+      image: 'assets/images/projects/the_grow.png',
+      playStoreUrl: 'https://play.google.com/store/apps/details?id=com.exotico.food_delivery',
+      appStoreUrl: 'https://apps.apple.com/us/app/exotico-food-delivery/id1586286824',
+    ),
+  ];
   static final String desc =
       'Skilled Developer with 6 years of experience developing mobile applications and 4 years of experience in the Flutter framework and 2 years of native app development experience. Skilled in collaborating with cross-functional teams to deliver high-quality, scalable solutions. Proficient in Agile development methodologies. Seeking to leverage my expertise in software development and my passion for innovation to drive business growth and success.';
 }

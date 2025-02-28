@@ -2,10 +2,12 @@ import 'dart:ui';
 
 import 'package:flutter/material.dart';
 import 'package:gap/gap.dart';
+import 'package:personal_portfolio/core/utils/app_constant.dart';
 
 import '../../../core/utils/color_manager.dart';
 import '../../../core/utils/size_manager.dart';
 import '../../dashboard/screen/dashboard_screen.dart';
+import '../models/my_project_model.dart';
 
 class MyProjectsScreen extends StatelessWidget {
   const MyProjectsScreen({super.key});
@@ -15,7 +17,6 @@ class MyProjectsScreen extends StatelessWidget {
     final Size size = MediaQuery.of(context).size;
 
     return Container(
-      height: size.height * .9,
       decoration: BoxDecoration(
         color: ColorManager.primaryColor,
         borderRadius: BorderRadius.only(
@@ -55,9 +56,15 @@ class MyProjectsScreen extends StatelessWidget {
                 Gap(size.height * .03),
                 BigTitleText(title1: "My", title2: 'Projects'),
                 Gap(size.height * .03),
-                Expanded(
-                  child: Wrap(
-                    children: List.generate(6, (generator) => ProjectItemWidget()),
+                GridView.count(
+                  crossAxisCount: 3,
+                  crossAxisSpacing: 16,
+                  mainAxisSpacing: 16,
+                  shrinkWrap: true,
+                  childAspectRatio: 1 / .7,
+                  children: List.generate(
+                    AppConstant.myProjectsList.length,
+                    (index) => ProjectItemWidget(data: AppConstant.myProjectsList[index]),
                   ),
                 )
               ],
@@ -70,70 +77,69 @@ class MyProjectsScreen extends StatelessWidget {
 }
 
 class ProjectItemWidget extends StatelessWidget {
-  const ProjectItemWidget({super.key});
+  const ProjectItemWidget({super.key, required this.data});
+
+  final MyProjectModel data;
 
   @override
   Widget build(BuildContext context) {
     final Size size = MediaQuery.of(context).size;
-    return Padding(
-      padding: const EdgeInsets.all(8.0),
-      child: ClipRRect(
-        borderRadius: BorderRadius.circular(20),
-        child: BackdropFilter(
-          filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
-          child: Container(
-            width: size.width * .25,
-            decoration: BoxDecoration(
-              borderRadius: BorderRadius.circular(20),
-              border: Border.all(
-                color: Colors.white.withAlpha(60),
-                width: 2,
-              ),
-              color: Colors.white.withAlpha(10),
-              boxShadow: [
-                BoxShadow(
-                  color: Colors.black.withAlpha(20),
-                  blurRadius: 15,
-                  spreadRadius: 2,
-                  offset: Offset(0, -5),
-                ),
-              ],
+    return ClipRRect(
+      borderRadius: BorderRadius.circular(20),
+      child: BackdropFilter(
+        filter: ImageFilter.blur(sigmaX: 5, sigmaY: 5),
+        child: Container(
+          decoration: BoxDecoration(
+            borderRadius: BorderRadius.circular(20),
+            border: Border.all(
+              color: Colors.white.withAlpha(60),
+              width: 2,
             ),
-            child: Column(
-              mainAxisAlignment: MainAxisAlignment.start,
-              crossAxisAlignment: CrossAxisAlignment.start,
-              children: [
-                Padding(
-                  padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
-                  child: Text(
-                    "VPM Cloude",
-                    style: TextStyle(
-                      color: Colors.white,
-                      fontSize: 22,
+            color: Colors.white.withAlpha(10),
+            boxShadow: [
+              BoxShadow(
+                color: Colors.black.withAlpha(20),
+                blurRadius: 15,
+                spreadRadius: 2,
+                offset: Offset(0, -5),
+              ),
+            ],
+          ),
+          child: Column(
+            mainAxisAlignment: MainAxisAlignment.start,
+            crossAxisAlignment: CrossAxisAlignment.start,
+            children: [
+              Padding(
+                padding: const EdgeInsets.symmetric(horizontal: 16, vertical: 16),
+                child: Text(
+                  data.name,
+                  style: TextStyle(
+                    color: Colors.white,
+                    fontSize: size.width * .016,
+                  ),
+                ),
+              ),
+              Divider(
+                color: Colors.white.withAlpha(60),
+                thickness: 2,
+                height: 0,
+              ),
+              Expanded(
+                child: ClipRRect(
+                  borderRadius: BorderRadius.only(
+                    bottomLeft: Radius.circular(20),
+                    bottomRight: Radius.circular(20),
+                  ),
+                  child: SizedBox(
+                    width: double.infinity,
+                    child: Image.asset(
+                      data.image,
+                      fit: BoxFit.cover,
                     ),
                   ),
                 ),
-                Divider(
-                  color: Colors.white.withAlpha(60),
-                  thickness: 2,
-                  height: 0,
-                ),
-                Column(
-                  children: [
-                    ClipRRect(
-                      borderRadius: BorderRadius.only(
-                        bottomLeft: Radius.circular(20),
-                        bottomRight: Radius.circular(20),
-                      ),
-                      child: Image.asset(
-                        'assets/images/projects/the_grow.png',
-                        fit: BoxFit.cover,
-                      ),
-                    ),
-                  ],
-                ),
-              ],
-            ),
+              ),
+            ],
           ),
         ),
       ),
