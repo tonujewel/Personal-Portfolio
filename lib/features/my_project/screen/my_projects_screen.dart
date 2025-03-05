@@ -57,6 +57,7 @@ class MyProjectsScreen extends StatelessWidget {
                 BigTitleText(title1: "My", title2: 'Projects'),
                 Gap(size.height * .03),
                 GridView.count(
+                  physics: NeverScrollableScrollPhysics(),
                   crossAxisCount: 3,
                   crossAxisSpacing: 16,
                   mainAxisSpacing: 16,

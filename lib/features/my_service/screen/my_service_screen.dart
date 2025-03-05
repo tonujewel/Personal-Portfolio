@@ -54,12 +54,24 @@ class MyServicesScreen extends StatelessWidget {
                 Gap(size.height * .03),
                 BigTitleText(title1: "My", title2: 'Services'),
                 Gap(size.height * .03),
-                Wrap(
-                  spacing: 16,
-                  runSpacing: 16,
-                  children: List.generate(AppConstant.myServicesList.length, (index) {
-                    return MyServiceItemWidget(data: AppConstant.myServicesList[index]);
-                  }),
+                // Wrap(
+                //   spacing: 16,
+                //   runSpacing: 16,
+                //   children: List.generate(AppConstant.myServicesList.length, (index) {
+                //     return MyServiceItemWidget(data: AppConstant.myServicesList[index]);
+                //   }),
+                // )
+                GridView.count(
+                  physics: NeverScrollableScrollPhysics(),
+                  crossAxisCount: 3,
+                  crossAxisSpacing: 16,
+                  mainAxisSpacing: 16,
+                  shrinkWrap: true,
+                  childAspectRatio: 1 / .7,
+                  children: List.generate(
+                    AppConstant.myProjectsList.length,
+                    (index) => MyServiceItemWidget(data: AppConstant.myServicesList[index]),
+                  ),
                 )
               ],
             ),
